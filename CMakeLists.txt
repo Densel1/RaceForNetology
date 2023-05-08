@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(RaceDll)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+add_library(DynamicLib SHARED airtransport.cpp airtransport.h Camel.cpp Camel.h Eagle.cpp Eagle.h fastCamel.cpp fastCamel.h GoEverywhereBoots.cpp GoEverywhereBoots.h groundtransport.cpp groundtransport.h kentavr.cpp kentavr.h KoverSamolet.cpp KoverSamolet.h Metla.cpp Metla.h MyExceptions.cpp MyExceptions.h race.cpp race.h transport.cpp transport.h)
+add_executable(mainEXE course.cpp)
+target_link_libraries(mainEXE PUBLIC DynamicLib)
